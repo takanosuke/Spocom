@@ -1,6 +1,8 @@
 class OmniauthCallbacksController < ApplicationController
 
-def line; basic_action end
+def line
+  basic_action
+end
 
 private
 
