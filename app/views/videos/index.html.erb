@@ -1,0 +1,6 @@
+<h1>動画選択画面</h1>
+<% @videos.each do |video| %>
+  <% if video.video.attachment.previewable? %>
+    <%= link_to image_tag(video.video.attachment.preview(resize: "200x200>")), video_path(video) %>
+  <% end %>
+<% end %>

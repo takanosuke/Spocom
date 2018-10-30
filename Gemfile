@@ -8,6 +8,9 @@ gem 'devise'
 gem 'omniauth-line'
 # Environment file management
 gem 'dotenv-rails'
+# Get thumbnail
+gem 'ffmpeg'
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
