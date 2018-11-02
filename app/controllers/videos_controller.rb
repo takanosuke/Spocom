@@ -15,6 +15,7 @@ class VideosController < ApplicationController
     @new_video = Video.create(video_params)
     redirect_to videos_path
   end
+  def 
   def update
   end
   def destroy

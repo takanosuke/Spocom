@@ -1,5 +1,8 @@
 <ul>
-<li><%= link_to "ログイン", user_line_omniauth_authorize_path %></li>
+<li><%= link_to "新規登録", new_user_registration_path %></li>
+<li><%= link_to "ログイン", new_user_session_path %></li>
+<li><%= link_to "ログアウト", destroy_user_session_path %></li>
+
 <li><%= link_to "動画一覧",videos_path %></li>
 <li><%= link_to "動画アップロード", new_video_path %></li>
 </ul>
