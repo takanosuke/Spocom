@@ -33,16 +33,6 @@ ActiveRecord::Schema.define(version: 2018_11_02_071549) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "purchased_items", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "item_name"
-    t.string "item_key"
-    t.integer "price"
-    t.integer "users_id"
-    t.index ["users_id"], name: "index_purchased_items_on_users_id"
-  end
-
   create_table "purchased_videos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -72,6 +62,12 @@ ActiveRecord::Schema.define(version: 2018_11_02_071549) do
   create_table "videos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "sport"
+    t.string "team1"
+    t.string "team2"
+    t.string "key"
+    t.integer "contributor_id"
   end
 
 end

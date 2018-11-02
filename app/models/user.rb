@@ -27,4 +27,8 @@ class User < ApplicationRecord
     self.raw_info = raw_info.to_json
     self.save!
   end
+
+  def purchased?(video)
+    self.purchased_videos.where("video_id = ?", video).exists?
+  end
 end

@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  get '/payment/confirmention', to: 'payment#confirmention'
-  get '/payment/pay', to: 'payment#pay'
+  get '/payment/confirmention/:video_id', to: 'payment#confirmention', as: :confirmention
+  get '/payment/pay/:video_id', to: 'payment#pay', as: :pay
 end

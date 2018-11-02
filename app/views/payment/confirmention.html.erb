@@ -1,4 +1,5 @@
 本当にこの動画を購入しますか？
 
-<p><%= link_to "はい" ,payment_pay_path %></p>
+タイトル：<%= @video.title %>
+<p><%= link_to "はい" , pay_path(@video) %></p>
 <p><%= link_to "いいえ", videos_path %></p>
