@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  def topPage
+  def top_page
     @video = Video.all.order(:created_at).first
   end
   def index
@@ -20,7 +20,7 @@ class VideosController < ApplicationController
   end
   def destroy
   end
-  def boughtList
+  def bought_list
   end
   private
     def video_params
