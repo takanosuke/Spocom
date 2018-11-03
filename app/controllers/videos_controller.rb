@@ -12,18 +12,12 @@ class VideosController < ApplicationController
     @video = Video.new
   end
   def create
-    @new_video = Video.create(video_params)
+    video = Video.new
+    video.register(video_params, current_user.id)
     redirect_to videos_path
-  end
-  def 
-  def update
-  end
-  def destroy
-  end
-  def bought_list
   end
   private
     def video_params
-      params.require(:video).permit(:video)
+      params.require(:video).permit(:video, :team1_id, :team2_id)
     end
 end

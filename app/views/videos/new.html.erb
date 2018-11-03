@@ -3,7 +3,6 @@
   <% if @video.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
       <ul>
       <% @video.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,8 +10,13 @@
       </ul>
     </div>
   <% end %>
+
   <div class="form-group">
     <%= form.file_field :video %><br>
+    <%= form.label :自分のチーム名 %><br>
+    <%= form.collection_select :team1_id, Team.all, :id, :name, :prompt => "選択してください"%><br>
+    <%= form.label :対戦相手のチーム名 %><br>
+    <%= form.collection_select :team2_id, Team.all, :id, :name, :prompt => "選択してください"%><br>
   </div>
   <div class="actions">
     <%= form.submit("Upload File", class: "btn btn-primary btn-lg") %>

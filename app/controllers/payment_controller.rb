@@ -10,6 +10,6 @@ class PaymentController < ApplicationController
   private
   def add_purchased_list(video_id)
     video = Video.find(video_id)
-    current_user.purchased_videos.create({video_id: video.id, video_title: video.title, price: 100})
+    current_user.purchased_videos.create({video_id: video.id, video_title: video.title, price: video.price})
   end
 end
