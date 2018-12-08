@@ -28,7 +28,7 @@ class User < ApplicationRecord
     self.save!
   end
 
-  def purchased?(video)
-    self.purchased_videos.where("video_id = ?", video).exists?
+  def expired?
+    current_user.subscription_expiration < Time.zone.now
   end
 end

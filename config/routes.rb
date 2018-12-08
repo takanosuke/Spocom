@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   end
   get '/payment/confirmention/:video_id', to: 'payment#confirmention', as: :confirmention
   get '/payment/pay/:video_id', to: 'payment#pay', as: :pay
+  get '/subscription_agreement/confirmention', to: 'subscription_agreement#confirmention', as: :renewal_confirmention
+  get '/subscription_agreement/renewal', to: 'subscription_agreement#renewal', as: :renewal
+  get '/subscription_agreement/expired_notification', to: 'subscription_agreement#expired_notification', as: :expired_notification
+
 end

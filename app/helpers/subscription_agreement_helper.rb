@@ -1,0 +1,2 @@
+module SubscriptionAgreementHelper
+end

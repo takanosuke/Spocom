@@ -1,0 +1,9 @@
+<h2>Spocomの利用期間更新を行いますか？<h2>
+
+<li>更新前　利用期限：<%= @old_expiration %></li>
+<li>更新後　利用期限：<%= @new_expiration %></li>
+
+<h4>料金: 0円</h4>
+
+<p><%= link_to "はい", renewal_path %></p>
+<p><%= link_to "いいえ", root_path %></p>

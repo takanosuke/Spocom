@@ -1,2 +1,0 @@
-class PurchasedVideosController < ApplicationController
-end
