@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        email: メールアドレス
+        subscription_expiration: 有効期限
+        team_id: チーム
+        position: 立場
+        first_name : 名
+        last_name : 姓
+        kana_first_name: メイ
+        kana_last_name: セイ
+        display_name: 表示名

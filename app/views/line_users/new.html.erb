@@ -1,0 +1,35 @@
+<h1>ユーザー登録画面</h1>
+<% if @new_user.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @new_user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_with(model: @new_user, url: line_users_path(line: @omniauth), local: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :姓　 %> :<%= form.text_field :last_name %>
+    <%= form.label :名　 %> :<%= form.text_field :first_name %><br>
+    <%= form.label :セイ %> :<%= form.text_field :kana_last_name %>
+    <%= form.label :メイ %> :<%= form.text_field :kana_first_name %><br>
+
+    <%= form.label :表示名 %><br>
+    <%= form.text_field :display_name %><br>
+    
+    <%= form.label :メールアドレス %><br>
+    <%= form.text_field :email %><br>
+
+    <%= form.label :立場 %><br>
+    <%= form.select :position, [["保護者", "guardian"], ["監督・コーチ", "coach"], ["選手", "player"]], :prompt => "選択してください" %><br>
+
+    <%= form.label :所属チーム名 %><br>
+    <%= form.collection_select :team_id, Team.all, :id, :name, :prompt => "選択してください" %><br>
+  
+    <%= form.check_box :agreement, :as => :boolean, checked:false %> 利用規約とプライバシーポリシーに同意する<br>
+  </div>
+  <div class="actions">
+    <%= form.submit("登録する", class: "btn") %>
+  </div>
+<% end %>

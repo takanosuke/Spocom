@@ -50,8 +50,14 @@ ActiveRecord::Schema.define(version: 2018_12_08_152415) do
     t.datetime "updated_at", null: false
     t.string "provider"
     t.string "uid"
-    t.string "name"
     t.datetime "subscription_expiration"
+    t.integer "team_id"
+    t.string "position"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "kana_first_name"
+    t.string "kana_last_name"
+    t.string "display_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
