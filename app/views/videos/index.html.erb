@@ -1,8 +1,11 @@
 <h1>動画選択画面</h1>
+
+<%= "#{@my_team}のプレイ動画" %><br><hr>
 <% @videos.each do |video| %>
+  
   <% if video.video.attachment.previewable? %>
-      <%= video.title %>
-      <%= link_to image_tag(video.video.attachment.preview(resize: "200x200>")), 
-              current_user.purchased?(video) ? video_path(video) : confirmention_path(video) %>
+      <%= video.title %><br>
+      <%= link_to image_tag(video.video.attachment.preview(resize: "200x200>")), video_path(video) %>
+      <br><hr>
   <% end %>
 <% end %>

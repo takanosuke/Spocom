@@ -1,14 +1,9 @@
 <h1>動画アップロード画面</h1>
 <%= form_with(model: @video, local: true) do |form| %>
   <% if @video.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-      <ul>
-      <% @video.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <% @video.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
   <% end %>
 
   <div class="form-group">

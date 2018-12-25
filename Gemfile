@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
-
+# javascript
+gem 'jquery-rails'
 # Line Login
 gem 'devise'
 gem 'omniauth-line'
