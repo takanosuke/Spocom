@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_08_152415) do
+ActiveRecord::Schema.define(version: 2018_11_03_091755) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2018_12_08_152415) do
   end
 
   create_table "teams", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "sport"
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -63,14 +63,14 @@ ActiveRecord::Schema.define(version: 2018_12_08_152415) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "title"
     t.string "sport"
-    t.integer "contributor_id"
-    t.integer "price"
     t.integer "team1_id"
     t.integer "team2_id"
+    t.integer "contributor_id"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
