@@ -20,7 +20,7 @@ class LineUsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:last_name, :kana_last_name, :first_name, :kana_first_name, :display_name, :position, :team_id, :email, :agreement)
+    params.require(:user).permit(:last_name, :kana_last_name, :first_name, :kana_first_name, :display_name, :team_id, :email, :agreement)
   end
   def line_params
     params.require(:line).permit(:provider, :uid, credentials: [:expires, :expires_at, :refresh_token, :token, :secret], info: [:description, :image, :name])

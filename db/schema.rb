@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 2019_01_21_053119) do
     t.string "uid"
     t.datetime "subscription_expiration"
     t.integer "team_id"
-    t.string "position"
+    t.integer "position"
     t.string "first_name"
     t.string "last_name"
     t.string "kana_first_name"

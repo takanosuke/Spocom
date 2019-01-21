@@ -21,9 +21,6 @@
     <%= form.label :メールアドレス %><br>
     <%= form.text_field :email %><br>
 
-    <%= form.label :立場 %><br>
-    <%= form.select :position, [["保護者", "guardian"], ["監督・コーチ", "coach"], ["選手", "player"]], :prompt => "選択してください" %><br>
-
     <%= form.label :所属チーム名 %><br>
     <%= form.collection_select :team_id, Team.all, :id, :name, :prompt => "選択してください" %><br>
   
