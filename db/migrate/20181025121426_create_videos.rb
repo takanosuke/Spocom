@@ -6,7 +6,7 @@ class CreateVideos < ActiveRecord::Migration[5.2]
       t.integer :team1_id
       t.integer :team2_id
       t.integer :contributor_id
-      t.integer :price
+      t.datetime :date
       t.timestamps
     end
   end

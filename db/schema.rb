@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 2019_01_21_053119) do
     t.integer "team1_id"
     t.integer "team2_id"
     t.integer "contributor_id"
-    t.integer "price"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

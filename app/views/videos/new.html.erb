@@ -12,6 +12,7 @@
     <%= form.collection_select :team1_id, Team.all, :id, :name, :prompt => "選択してください"%><br>
     <%= form.label :対戦相手のチーム名 %><br>
     <%= form.collection_select :team2_id, Team.all, :id, :name, :prompt => "選択してください"%><br>
+    <%= form.date_select :date %>
   </div>
   <div class="actions">
     <%= form.submit("Upload File", class: "btn btn-primary btn-lg") %>

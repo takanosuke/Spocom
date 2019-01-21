@@ -6,12 +6,10 @@ class Video < ApplicationRecord
   validate :video_validation
 
   def register(params, user)
-    self.price = 100
+    self.attributes = params
     self.title = make_video_title(params[:team1_id], params[:team2_id])
     self.sport = "soccer"
     self.contributor_id = user
-    self.team1_id = params[:team1_id]
-    self.team2_id = params[:team2_id]
     self.video.attach(params[:video])
     self.save
   end
