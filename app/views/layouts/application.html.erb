@@ -8,39 +8,33 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  
-
   <body>
-  <header class="head-main">
-  <div class="navbar navbar-dark bg-dark box-shadow p-1">
-    <div class="container d-flex justify-content-between p-0">
-      <div class="nav-button ml-0"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></div>
-      <div class="navbar-brand d-flex p-0 mx-auto">
-        <%= link_to image_tag("naver.png", :height=> 40, :alt => "アイコン"), root_path %>
-      </div>
-    </div>
-  </div> <!--navbar end-->
-  
-  <div class="fixed-top main-menu">
-    <div class="flex-center p-5">
-      <ul class="nav flex-column">
-        <li class="nav-item delay-1"><a class="nav-link" href="#">HOME</a></li>
-        <li class="nav-item delay-2"><a class="nav-link" href="#">ABOUT US</a></li>
-        <li class="nav-item delay-3"><a class="nav-link" href="#">PRODUCTS</a></li>
-        <li class="nav-item delay-4"><a class="nav-link" href="#">APPLICATIONS</a></li>
-        <li class="nav-item delay-5"><a class="nav-link" href="#">FACILITIES</a></li>
-        <li class="nav-item delay-6"><a class="nav-link" href="#">QUALITY</a></li>
-        <li class="nav-item delay-7"><a class="nav-link" href="#">CAREER</a></li>
-        <li class="nav-item delay-8"><a class="nav-link" href="#">CONTACT US</a></li>
-      </ul>
-    </div>
-  </div> <!--main-menu end-->
-</header>
+    <header class="head-main">
+      <div class="navbar navbar-dark bg-dark box-shadow p-1">
+        <div class="container d-flex justify-content-between p-0">
+          <div class="nav-button ml-0"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></div>
+          <div class="navbar-brand d-flex p-0 mx-auto">
+            <%= link_to image_tag("naver.png", :height=> 40, :alt => "アイコン"), root_path %>
+          </div>
+        </div>
+      </div> <!--navbar end-->
+      <div class="fixed-top main-menu">
+        <div class="flex-center p-5">
+          <ul class="nav flex-column">
+            <li class="nav-item delay-1"><a class="nav-link" href="#">HOME</a></li>
+            <li class="nav-item delay-2"><a class="nav-link" href="#">ABOUT US</a></li>
+            <li class="nav-item delay-3"><a class="nav-link" href="#">PRODUCTS</a></li>
+            <li class="nav-item delay-4"><a class="nav-link" href="#">APPLICATIONS</a></li>
+            <li class="nav-item delay-5"><a class="nav-link" href="#">FACILITIES</a></li>
+            <li class="nav-item delay-6"><a class="nav-link" href="#">QUALITY</a></li>
+            <li class="nav-item delay-7"><a class="nav-link" href="#">CAREER</a></li>
+            <li class="nav-item delay-8"><a class="nav-link" href="#">CONTACT US</a></li>
+          </ul>
+        </div>
+      </div> <!--main-menu end-->
+  </header>
 
-    <h1><%= link_to "Spocom", root_path %></h1>
-    <h3><%= welcome_message %></h3>
-
+  <footer>
     <nav class="navbar fixed-bottom navbar-dark bg-dark p-2">
       <ul class="nav nav-justified">
         <li class="text-center"><a href=root_path><i class="fa fa-home fa-3x"  style="color:white"></i></a></li>
@@ -48,9 +42,10 @@
         <li class="text-center"><a href="#"><i class="fa fa-comments fa-3x" style="color:white"></i></a></li>
         <li class="text-center"><a href="#"><i class="fa fa-play-circle fa-3x" style="color:white"></i></a></li>
       </ul>
-    </nav>
+    </nav> <!--footer end-->
+  </footer>
 
-    <%= yield %>
+  <%= yield %>
 
   </body>
 </html>
