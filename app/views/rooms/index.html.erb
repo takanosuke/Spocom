@@ -1,0 +1,5 @@
+<h3>チャット</h3>
+
+<% @team_users.each do |team_user| %>
+  <%= link_to team_user.first_name, find_room_path(team_user) %>
+<% end %>
