@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'videos#top_page'
   resources :rooms
   resources :videos
-  resources :line_users, :only => [:new, :create]
+  resources :line_users, :except => [:index, :destroy]
   #devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   devise_scope :user do

@@ -2,6 +2,9 @@
 <li><%= link_to "新規登録", user_line_omniauth_authorize_path %></li>
 <li><%= link_to "ログイン", user_line_omniauth_authorize_path %></li>
 <li><%= link_to "ログアウト", destroy_user_session_path %></li>
+<% if user_signed_in? %>
+  <li><%= link_to "ユーザー編集", edit_line_user_path(current_user.id) %></li>
+<% end %>
 <li><%= link_to "動画一覧",videos_path %></li>
 <li><%= link_to "動画アップロード", new_video_path %></li>
 <li><%= link_to "チャット一覧", rooms_path %>
