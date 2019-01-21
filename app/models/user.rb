@@ -52,6 +52,6 @@ class User < ApplicationRecord
   end
   
   def coach?
-    self.team_id == 2
+    self.position == 2
   end
 end

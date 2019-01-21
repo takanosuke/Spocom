@@ -5,7 +5,7 @@ class RoomsController < ApplicationController
                         .where.not(id: current_user.id).all()
     else
       @team_users = User.where("team_id = ?", current_user.team_id)
-                        .where("position = ?", "coach").all()
+                        .where("position = ?", 2).all()
     end
   end
 
