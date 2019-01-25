@@ -6,7 +6,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:line]
 
   has_many :social_profiles, dependent: :destroy
-
+  has_many :messages
+  
   validates_acceptance_of :agreement, allow_nil: false, on: :create
   validates :team_id, presence: {message: "チーム名を選択してください"}
   validates :position, presence: {message: "立場を選択してください"}
@@ -39,5 +40,18 @@ class User < ApplicationRecord
 
   def expired?
     current_user.subscription_expiration < Time.zone.now
+  end
+
+  def teammate?(user_id)
+    user = User.find_by(id:user_id)
+    if user.present? && self.team_id == user.team_id
+      true
+    else
+      false
+    end
+  end
+  
+  def coach?
+    self.position == 2
   end
 end
