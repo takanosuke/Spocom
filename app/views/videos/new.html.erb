@@ -1,20 +1,31 @@
-<h1>動画アップロード画面</h1>
-<%= form_with(model: @video, local: true) do |form| %>
-  <% if @video.errors.any? %>
-    <% @video.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  <% end %>
+<h5 class="heading">動画アップロード画面</h1>
 
-  <div class="form-group">
-    <%= form.file_field :video %><br>
-    <%= form.label :自分のチーム名 %><br>
-    <%= form.collection_select :team1_id, Team.all, :id, :name, :prompt => "選択してください"%><br>
-    <%= form.label :対戦相手のチーム名 %><br>
-    <%= form.collection_select :team2_id, Team.all, :id, :name, :prompt => "選択してください"%><br>
-    <%= form.date_select :date %>
-  </div>
-  <div class="actions">
-    <%= form.submit("Upload File", class: "btn btn-primary btn-lg") %>
-  </div>
-<% end %>
+<div class="container">
+  <%= form_with(model: @video, local: true) do |form| %>
+    <% if @video.errors.any? %>
+      <% @video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
+    <br>
+    <div class="form-group text-center">
+      <label for="video_video" class="btn-lg btn-secondary btn-secondary">動画を選択</label>
+      <%= form.file_field :video , class: "hidden" %>
+    </div>
+    <div class="form-group">
+      <label for="video_team1_id">自分のチーム名</label>
+      <%= form.collection_select :team1_id, Team.all, :id, :name, {:prompt => "選択してください"}, {class:"form-control"} %>
+    </div>
+    <div class="form-group">
+      <label for="video_team2_id">対戦相手のチーム名</label>
+      <%= form.collection_select :team2_id, Team.all, :id, :name, {:prompt => "選択してください"}, {class:"form-control"} %>
+    </div>
+    <div class="form-group">
+      <label for="video_date_1i video_date_2i video_date_3i">対戦日</label><br>
+      <%= form.date_select :date,{use_month_numbers: true}, {class:"form-control select-date"} %>
+    </div>
+    <div class="text-center">
+      <%= form.submit("アップロード", class: "btn btn-primary btn") %>
+    </div>
+  <% end %>
+</div>

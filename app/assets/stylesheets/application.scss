@@ -3,6 +3,10 @@
 @import "font-awesome";
 @import './common/utility';
 
+// common
+body {background-color: #a0d8ef;}
+.hidden {display: none!important;}
+
 // footer divide by four
 .nav-justified {
     display: table;
@@ -58,3 +62,20 @@
 
 .flex-center{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;height:100%}
 // nemu end
+
+//container
+.heading{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-width: thick !important;
+    @extend .text-center;
+    @extend .text-warning;
+    @extend .bg-secondary;
+    @extend .border-top;
+    @extend .border-bottom;
+    @extend .border-dark;
+}
+.select-date {
+    display: inline-block;
+    width: auto;
+}
