@@ -5,6 +5,7 @@
 
 // common
 body {background-color: #a0d8ef;}
+
 .hidden {display: none!important;}
 
 // footer divide by four
@@ -64,6 +65,13 @@ body {background-color: #a0d8ef;}
 // nemu end
 
 //container
+.before-login-heading{
+    margin-top:5%;
+    margin-bottom:5%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #00bfff;
+}
 .heading{
     margin-top: 2%;
     margin-bottom: 2%;
