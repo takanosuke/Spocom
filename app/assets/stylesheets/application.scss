@@ -4,7 +4,7 @@
 @import './common/utility';
 
 // common
-body {background-color: #a0d8ef;}
+body {background-color: #B9EBff;}
 
 .hidden {display: none!important;}
 
@@ -76,8 +76,8 @@ body {background-color: #a0d8ef;}
     margin-top: 2%;
     margin-bottom: 2%;
     border-width: thick !important;
+    color: #F7931E;
     @extend .text-center;
-    @extend .text-warning;
     @extend .bg-secondary;
     @extend .border-top;
     @extend .border-bottom;
@@ -86,4 +86,19 @@ body {background-color: #a0d8ef;}
 .select-date {
     display: inline-block;
     width: auto;
+}
+.electric_bulletin_board{
+    background-image: image-url("electric_bulletin_board.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.video{
+    margin-top:7%;
+    margin-bottom: 10%;
+    padding-right:3%;
+}
+.audience_seats{
+    background-image: image-url("audience_seats.png");
+    background-size: contain;
+    background-repeat: repeat-y;
 }

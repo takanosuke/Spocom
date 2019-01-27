@@ -1,2 +1,11 @@
-<h1>動画視聴画面</h1>
-<%= video_tag(rails_blob_path(@video.video), :controls=>true, :width=>800, :disposition => 'inline') %>
+<h5 class="heading"><%= image_tag "check_sheet_icon.png", width:30, class:'img-fluid'; %>TEAM VIDEO</h5>
+<div class=container>
+  <div class="electric_bulletin_board row">
+    <div class="offset-2">
+      <%= video_tag(rails_blob_path(@video.video), controls:true, disposition:'inline', class:'img-fluid video') %>
+    </div>
+  </div>
+  <div class="audience_seats">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+</div>
