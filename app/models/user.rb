@@ -7,7 +7,8 @@ class User < ApplicationRecord
 
   has_many :social_profiles, dependent: :destroy
   has_many :messages
-  
+  has_many :user_rooms
+
   validates_acceptance_of :agreement, allow_nil: false, on: :create
   validates :team_id, presence: {message: "チーム名を選択してください"}
   validates :position, presence: {message: "立場を選択してください"}

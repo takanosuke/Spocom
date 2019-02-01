@@ -1,5 +1,14 @@
-<h3>チャット</h3>
+<h5 class="heading">CHAT</h5>
 
-<% @team_users.each do |team_user| %>
-  <%= link_to team_user.first_name, find_room_path(team_user) %>
-<% end %>
+<div class="container">
+  <%= current_user.display_name %><br>
+  <hr>
+  <small>チャット相手一覧</small>
+  <hr>
+  <% @team_users.each do |team_user| %>
+    <div class="text-center">
+    <h6><%= link_to team_user.first_name, find_room_path(team_user), class:"text-center" %></h6><br>
+    <hr>
+    </div>
+  <% end %>
+</div>

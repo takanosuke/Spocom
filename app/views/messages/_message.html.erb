@@ -1,3 +1,12 @@
+<% mine = (message.user_id == current_user.id) %>
 <div class="message">
-  <p><%= "#{message.content}" %></p>
+  <figure class="message-img-<%= mine ? "right" : "left" %>">
+    <img src="画像のURL" alt="">
+  <figcaption class="message-img-description">
+    <%= "#{display_name(message.user_id)}" %>
+  </figcaption>
+  </figure>
+  <div class="message-text-<%= mine ? "left" : "right" %>">
+   <p class="message-text"><%= "#{message.content}" %></p>
+  </div>
 </div>

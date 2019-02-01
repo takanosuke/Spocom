@@ -27,6 +27,13 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @messages = @room.messages
+    to_user = @room.user_rooms.where("user_id!=?", current_user.id).first.user_id
+    to_user = User.find_by(id: to_user)
+    if to_user.nil?
+      @to_user_name = "UNKNOWN"
+    else
+      @to_user_name = to_user.display_name 
+    end
   end
 
   private

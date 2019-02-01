@@ -37,13 +37,21 @@
     <footer>
       <nav class="navbar fixed-bottom navbar-dark bg-dark p-2">
         <ul class="nav nav-justified">
-          <li class="text-center"><a href=root_path><i class="fa fa-home fa-3x"  style="color:white"></i></a></li>
-          <li class="text-center"><a href="#"><i class="fa fa-user fa-3x" style="color:white"></i></a></li>
-          <li class="text-center"><a href="#"><i class="fa fa-comments fa-3x" style="color:white"></i></a></li>
-          <li class="text-center"><a href="#"><i class="fa fa-play-circle fa-3x" style="color:white"></i></a></li>
+          <li class="text-center">
+            <%= link_to root_path do %><i class="fa fa-home fa-3x"  style="color:white"></i><% end %>
+          </li>
+          <li class="text-center">
+            <%= link_to videos_path do %><i class="fa fa-user fa-3x" style="color:white"></i><% end %>
+          </li>
+          <li class="text-center">
+            <%= link_to rooms_path do %><i class="fa fa-comments fa-3x" style="color:white"></i><% end %>
+          </li>
+          <li class="text-center">
+            <%= link_to new_video_path do %><i class="fa fa-play-circle fa-3x" style="color:white"></i><% end %>
+          </li>
         </ul>
-      </nav> <!--footer end-->
-    </footer>
+      </nav>
+    </footer><!--footer end-->
     <%= yield %>
   </body>
 </html>
