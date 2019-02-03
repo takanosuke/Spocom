@@ -4,4 +4,4 @@ line:
 database:
   username: # mysql username
   password: # mysql password
-  host:
+  host: # server host name
