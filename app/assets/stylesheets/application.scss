@@ -5,7 +5,6 @@
 
 // common
 body {background-color: #B9EBff;}
-
 .hidden {display: none!important;}
 
 // footer divide by four
@@ -97,6 +96,13 @@ body {background-color: #B9EBff;}
     margin-bottom: 10%;
     padding-right:3%;
 }
+
+.upload-btn{
+  width: 50%;
+  height: 100%;
+  background: #AAAAAA;
+}
+
 .audience_seats{
     background-image: image-url("audience_seats.png");
     background-size: contain;
@@ -104,10 +110,12 @@ body {background-color: #B9EBff;}
 }
 
 // chat
+.chat-room{margin-bottom:120px}
 .chat-form {
     .form-control {width: 80%;}
     .submit-btn {width: 20%;}
-    padding: 3%;
+    padding: 2%;
+    margin-bottom: 60px;
     @extend .bg-secondary;
 }
 .message {
