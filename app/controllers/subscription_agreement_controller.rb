@@ -1,4 +1,6 @@
 class SubscriptionAgreementController < ApplicationController
+  before_action :authenticate_user!
+
   def expired_notification
     @old_expiration= Time.zone.now
   end

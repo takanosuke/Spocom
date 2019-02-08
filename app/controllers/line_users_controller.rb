@@ -1,4 +1,5 @@
 class LineUsersController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update]
   def new
     @new_user = User.new()
     @omniauth = line_params

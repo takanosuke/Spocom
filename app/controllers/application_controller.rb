@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!, only: [:check_subscription_expiration]
   def check_subscription_expiration
     if User.expired?
       redirect_to expired_notification_path

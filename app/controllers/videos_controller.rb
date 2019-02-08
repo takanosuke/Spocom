@@ -1,4 +1,6 @@
 class VideosController < ApplicationController
+  before_action :authenticate_user!, except: [:top_page]
+
   def top_page
     @video = Video.all.order(:created_at).first
   end

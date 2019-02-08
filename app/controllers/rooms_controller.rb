@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     if current_user.coach?
       @team_users = User.where("team_id = ?", current_user.team_id)
