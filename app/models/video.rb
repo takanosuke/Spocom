@@ -1,8 +1,8 @@
 class Video < ApplicationRecord
   has_one_attached :video
 
-  validates :team1_id, presence: {message: "自分のチーム名を選択してください"}
-  validates :team2_id, presence: {message: "対戦相手のチーム名を選択してください"}
+  validates :team1_id, presence: true
+  validates :team2_id, presence: true
   validate :video_validation
 
   def register(params, user)
@@ -29,17 +29,17 @@ class Video < ApplicationRecord
   
   def video_validation
     if !video.attached?
-      errors.add(:video, I18n.t('動画が選択されていません。'))
+      errors.add(:video, 'が選択されていません')
     elsif video.blob.byte_size > 10.gigabytes
       video.purge
-      errors.add(:video, I18n.t('動画ファイルが大きすぎます。'))
+      errors.add(:video, 'ファイルが大きすぎます。')
     elsif !video?
       video.purge
-      errors.add(:video, I18n.t('そのファイル形式には対応していません。'))
+      errors.add(:video, 'ファイルが無効な形式です。')
     end
   end
 
   def video?
-    %w[video/mp4 video/gif].include?(video.blob.content_type)
+    %w[video/mp4 video/gif video/mov video/m4v].include?(video.blob.content_type)
   end
 end

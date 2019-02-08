@@ -1,0 +1,29 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      video: '動画'
+    attributes:
+      user:
+        email: 'メールアドレス'
+        subscription_expiration: '有効期限'
+        team_id: 'チーム'
+        position: '立場'
+        name: '名前'
+        kana_name: 'ナマエ'
+        first_name: '名'
+        last_name: '姓'
+        kana_first_name: 'メイ'
+        kana_last_name: 'セイ'
+        display_name: '表示名'
+        agreement: '利用規約'
+      video:
+        video: '動画'
+        title: 'タイトル'
+        sport: 'スポーツ'
+        team: チーム名
+        team1_id: '対戦チーム名1'
+        team2_id: '対戦チーム名2'
+        contributor_id: '投稿者'
+        date: '撮影日'
+        upload: 'アップロード'

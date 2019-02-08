@@ -10,12 +10,12 @@ class User < ApplicationRecord
   has_many :user_rooms
 
   validates_acceptance_of :agreement, allow_nil: false, on: :create
-  validates :team_id, presence: {message: "チーム名を選択してください"}
-  validates :position, presence: {message: "立場を選択してください"}
-  validates :first_name, length: {in: 1..15, message: "名前は1~15文字で入力してください"}
-  validates :last_name, length: {in: 1..15, message: "名前は1~15文字で入力してください"}
-  validates :kana_first_name, length: {in: 1..15, message: "名前は1~15文字で入力してください"}
-  validates :kana_last_name, length: {in: 1..15, message: "名前は1~15文字で入力してください"}
+  validates :team_id, presence: true
+  validates :position, presence: true
+  validates :first_name, length: {in: 1..15}
+  validates :last_name, length: {in: 1..15}
+  validates :kana_first_name, length: {in: 1..15}
+  validates :kana_last_name, length: {in: 1..15}
   #validates :display_name, length: {in: 1..10, message: "表示名は1~15文字で入力してください"}
   validates :subscription_expiration, presence: true
 
