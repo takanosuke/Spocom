@@ -8,7 +8,8 @@ class LineUsersController < ApplicationController
   def create
     @omniauth = line_params
     @new_user = User.new(user_params)
-    @new_user.attributes = {provider: @omniauth[:provider], uid: @omniauth[:uid], position:1, subscription_expiration: Time.zone.now + 1.month, password: Devise.friendly_token[0, 20]}
+    @new_user.attributes = {provider: @omniauth[:provider], uid: @omniauth[:uid], position:1, 
+                            subscription_expiration: Time.zone.now + 1.month, password: Devise.friendly_token[0, 20]}
     if @new_user.save
       @new_user.set_values(@omniauth)
       sign_in(:user, @new_user)
