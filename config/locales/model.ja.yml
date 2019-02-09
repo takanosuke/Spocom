@@ -17,6 +17,9 @@ ja:
         kana_last_name: 'セイ'
         display_name: '表示名'
         agreement: '利用規約'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        image: プロフィール画像
       video:
         video: '動画'
         title: 'タイトル'

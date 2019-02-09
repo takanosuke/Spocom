@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, 
          :omniauthable, omniauth_providers: [:line]
 
+  has_one_attached :image
   has_many :social_profiles, dependent: :destroy
   has_many :messages
   has_many :user_rooms
@@ -16,8 +17,9 @@ class User < ApplicationRecord
   validates :last_name, length: {in: 1..15}
   validates :kana_first_name, length: {in: 1..15}
   validates :kana_last_name, length: {in: 1..15}
-  #validates :display_name, length: {in: 1..10, message: "表示名は1~15文字で入力してください"}
   validates :subscription_expiration, presence: true
+
+  before_validation :set_initial_value, on: [:create]
 
   def social_profile(provider)
     social_profiles.select{ |sp| sp.provider == provider.to_s }.first
@@ -55,4 +57,14 @@ class User < ApplicationRecord
   def coach?
     self.position == 2
   end
+
+  private
+    def set_initial_value
+      self.position ||= 1
+      self.subscription_expiration ||= Time.zone.now + 1.month
+      if not self.image.attached?
+        self.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'player_1.jpg')),
+                          filename: 'default.png', content_type: 'image/png')
+      end
+    end
 end

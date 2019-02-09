@@ -9,8 +9,7 @@ class LineUsersController < ApplicationController
   def create
     @omniauth = line_params
     @new_user = User.new(user_params)
-    @new_user.attributes = {provider: @omniauth[:provider], uid: @omniauth[:uid], position:1, 
-                            subscription_expiration: Time.zone.now + 1.month, password: Devise.friendly_token[0, 20]}
+    @new_user.attributes = {provider: @omniauth[:provider], uid: @omniauth[:uid], password: Devise.friendly_token[0, 20]}
     if @new_user.save
       @new_user.set_values(@omniauth)
       sign_in(:user, @new_user)
@@ -40,9 +39,12 @@ class LineUsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:last_name, :kana_last_name, :first_name, :kana_first_name, :display_name, :team_id, :email, :agreement)
+    params.require(:user).permit(:last_name, :kana_last_name, :first_name, :kana_first_name, 
+                                 :display_name, :team_id, :email, :image, :agreement)
   end
   def line_params
-    params.require(:line).permit(:provider, :uid, credentials: [:expires, :expires_at, :refresh_token, :token, :secret], info: [:description, :image, :name])
+    params.require(:line).permit(:provider, :uid, 
+                                 credentials: [:expires, :expires_at, :refresh_token, :token, :secret], 
+                                 info: [:description, :image, :name])
   end
 end
