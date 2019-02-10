@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates :kana_first_name, length: {in: 1..15}
   validates :kana_last_name, length: {in: 1..15}
   validates :subscription_expiration, presence: true
+  validate :image_validation
 
   before_validation :set_initial_value, on: [:create]
 
@@ -59,12 +60,29 @@ class User < ApplicationRecord
   end
 
   private
-    def set_initial_value
-      self.position ||= 1
-      self.subscription_expiration ||= Time.zone.now + 1.month
-      if not self.image.attached?
-        self.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'player_1.jpg')),
-                          filename: 'default.png', content_type: 'image/png')
-      end
+  def set_initial_value
+    self.position ||= 1
+    self.subscription_expiration ||= Time.zone.now + 1.month
+    if not self.image.attached?
+      self.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'player_1.jpg')),
+                        filename: 'default.png', content_type: 'image/jpg')
     end
+  end
+
+  def image_validation
+    if !image.attached?
+      errors.add(:image, 'が選択されていません')
+    elsif image.blob.byte_size > 15.megabytes
+      image.purge
+      errors.add(:image, 'ファイルが大きすぎます。')
+    elsif !image?
+      image.purge
+      errors.add(:image, 'ファイルが無効な形式です。')
+    end
+  end
+
+  def image?
+    %w[image/png image/jpeg image/bmp image/gif].include?(image.blob.content_type)
+  end
+
 end

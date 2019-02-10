@@ -12,7 +12,8 @@ gem 'omniauth-line'
 gem 'dotenv-rails'
 # Get thumbnail
 gem 'ffmpeg'
-gem 'mini_magick'
+# Use ActiveStorage variant
+gem 'mini_magick', '~> 4.9.2'
 # Be Japanese
 gem 'rails-i18n'
 # env config
@@ -40,9 +41,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
