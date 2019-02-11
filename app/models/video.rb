@@ -10,7 +10,6 @@ class Video < ApplicationRecord
     self.title = make_video_title(params[:team1_id], params[:team2_id])
     self.sport = "soccer"
     self.contributor_id = user
-    self.video.attach(params[:video])
     self.save
   end
 
