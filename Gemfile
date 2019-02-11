@@ -18,6 +18,9 @@ gem 'mini_magick', '~> 4.9.2'
 gem 'rails-i18n'
 # env config
 gem 'config'
+# For upload to s3
+gem 'aws-sdk-s3'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use mysql as the database for Active Record
