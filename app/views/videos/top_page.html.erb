@@ -1,15 +1,16 @@
 <ul>
-<li><%= link_to "新規登録", user_line_omniauth_authorize_path %></li>
-<li><%= link_to "ログイン", user_line_omniauth_authorize_path %></li>
-<li><%= link_to "ログアウト", destroy_user_session_path %></li>
 <% if user_signed_in? %>
   <li><%= link_to "ユーザー編集", edit_line_user_path(current_user.id) %></li>
+  <li><%= link_to "ログアウト", destroy_user_session_path %></li>
+  <li><%= link_to "動画一覧",videos_path %></li>
+  <li><%= link_to "動画アップロード", new_video_path %></li>
+  <li><%= link_to "チャット一覧", rooms_path %>
   <% if current_user.image.attached? %>
     <%= image_tag current_user.image %>
   <% end %>
+<% else %>
+  <li><%= link_to "メールアドレス会員登録", new_user_registration_path %>
+  <li><%= link_to "メールアドレスログイン", new_user_session_path %>
+  <li><%= link_to "LINE会員登録/ログイン", user_line_omniauth_authorize_path %></li>
 <% end %>
-<li><%= link_to "動画一覧",videos_path %></li>
-<li><%= link_to "動画アップロード", new_video_path %></li>
-<li><%= link_to "チャット一覧", rooms_path %>
-<li><%= link_to "開発用ログイン", new_user_session_path %>
 </ul>

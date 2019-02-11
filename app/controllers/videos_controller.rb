@@ -7,7 +7,7 @@ class VideosController < ApplicationController
   def index
     team_id = current_user.team_id
     @my_team = Team.find(team_id).name
-    @videos = Video.where('team1_id=? or team2_id=?', team_id, team_id).all.order(:created_at)
+    @team_videos = Video.where('team1_id=? or team2_id=?', team_id, team_id).all.order(:date)
   end
   def show
     @video = Video.find(params[:id])

@@ -1,11 +1,12 @@
-<h1>動画選択画面</h1>
-
-<%= "#{@my_team}のプレイ動画" %><br><hr>
-<% @videos.each do |video| %>
-  
-  <% if video.video.attachment.previewable? %>
-      <%= video.title %><br>
-      <%= link_to image_tag(video.video.attachment.preview(resize: "200x200>")), video_path(video) %>
-      <br><hr>
-  <% end %>
+<h5 class="heading">MY GAMES</h5>
+<br>
+<h6 class="text-center bg-info"><%= "#{@my_team}の動画" %></h6>
+<% @team_videos.each do |video| %>
+  <div class="text-center">
+    <% if video.video.attachment.previewable? %>
+        <%= video.title %><br>
+        <%= link_to image_tag(video.video.attachment.preview(resize: "300x300>")), video_path(video) %>
+        <br><hr>
+    <% end %>
+  </div>
 <% end %>

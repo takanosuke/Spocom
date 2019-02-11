@@ -19,7 +19,8 @@ ja:
         agreement: '利用規約'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
-        image: プロフィール画像
+        image: 'プロフィール画像'
+        remember_me: 'ログイン状態を保持する'
       video:
         video: '動画'
         title: 'タイトル'

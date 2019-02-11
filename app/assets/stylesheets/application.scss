@@ -65,6 +65,7 @@ body {background-color: #B9EBff;}
 
 //container
 .before-login-heading{
+    @extend .container-fluid;
     margin-top:5%;
     margin-bottom:5%;
     padding-top: 3%;
