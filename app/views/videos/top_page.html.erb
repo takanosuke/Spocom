@@ -4,9 +4,11 @@
   <li><%= link_to "ログアウト", destroy_user_session_path %></li>
   <li><%= link_to "動画一覧",videos_path %></li>
   <li><%= link_to "動画アップロード", new_video_path %></li>
-  <li><%= link_to "チャット一覧", rooms_path %>
+  <li><%= link_to "チャット一覧", rooms_path %></li>
+  <br>
   <% if current_user.image.attached? %>
-    <%= image_tag current_user.image %>
+    <%= current_user.fullname %>
+    <%= image_tag(current_user.image, width:100) %>
   <% end %>
 <% else %>
   <li><%= link_to "メールアドレス会員登録", new_user_registration_path %>

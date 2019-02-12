@@ -59,6 +59,10 @@ class User < ApplicationRecord
     self.position == 2
   end
 
+  def fullname
+    "#{self.last_name} #{self.first_name}"
+  end
+
   private
   def set_initial_value
     self.position ||= 1

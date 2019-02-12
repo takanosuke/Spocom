@@ -6,16 +6,20 @@
 // common
 body {background-color: #B9EBff;}
 .hidden {display: none!important;}
+a {
+  text-decoration: none !important;
+  border: none !important;
+}
 
 // footer divide by four
 .nav-justified {
-    display: table;
-    table-layout: fixed;
-    width: 100%;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
 }
 .navbar .nav-justified > li {
-    display: table-cell;
-    width: 100%;
+  display: table-cell;
+  width: 100%;
 }
 // footer divide end
 
@@ -24,20 +28,20 @@ body {background-color: #B9EBff;}
 .nav-open .main-menu {opacity: 1; visibility: visible; background: rgba(0, 0, 0, 0.92); }
 .main-menu .nav li a{color:#FFF; font-size: 5vh; font-weight:600; }
 .main-menu .nav li{
-    opacity: 0;
-    -webkit-transform: translateY(-40px);
-    transform: translateY(-40px);
-    -webkit-animation-timing-function: cubic-bezier(.45,.005,0,1);
-    -moz-animation-timing-function: cubic-bezier(.45,.005,0,1);
-    -o-animation-timing-function: cubic-bezier(.45,.005,0,1);
-    animation-timing-function: cubic-bezier(.45,.005,0,1);
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+  transform: translateY(-40px);
+  -webkit-animation-timing-function: cubic-bezier(.45,.005,0,1);
+  -moz-animation-timing-function: cubic-bezier(.45,.005,0,1);
+  -o-animation-timing-function: cubic-bezier(.45,.005,0,1);
+  animation-timing-function: cubic-bezier(.45,.005,0,1);
 }
 .nav-open .main-menu .nav li{
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-    -webkit-transition: -webkit-transform .2s,opacity .2s;
-    transition: transform .2s,opacity .2s;
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition: -webkit-transform .2s,opacity .2s;
+  transition: transform .2s,opacity .2s;
 }
 .main-menu .nav li.delay-1{-webkit-transition-delay:0.1s; -moz-transition-delay:0.1s; -ms-transition-delay:0.1s; -o-transition-delay:0.1s; transition-delay:0.1s; }
 .main-menu .nav li.delay-2{-webkit-transition-delay:0.2s; -moz-transition-delay:0.2s; -ms-transition-delay:0.2s; -o-transition-delay:0.2s; transition-delay:0.2s; }
@@ -65,37 +69,37 @@ body {background-color: #B9EBff;}
 
 //container
 .before-login-heading{
-    @extend .container-fluid;
-    margin-top:5%;
-    margin-bottom:5%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    background-color: #00bfff;
+  @extend .container-fluid;
+  margin-top:5%;
+  margin-bottom:5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: #00bfff;
 }
 .heading{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    border-width: thick !important;
-    color: #F7931E;
-    @extend .text-center;
-    @extend .bg-secondary;
-    @extend .border-top;
-    @extend .border-bottom;
-    @extend .border-dark;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border-width: thick !important;
+  color: #F7931E;
+  @extend .text-center;
+  @extend .bg-secondary;
+  @extend .border-top;
+  @extend .border-bottom;
+  @extend .border-dark;
 }
 .select-date {
-    display: inline-block;
-    width: auto;
+  display: inline-block;
+  width: auto;
 }
 .electric_bulletin_board{
-    background-image: image-url("electric_bulletin_board.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+  background-image: image-url("electric_bulletin_board.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .video{
-    margin-top:7%;
-    margin-bottom: 10%;
-    padding-right:3%;
+  margin-top:7%;
+  margin-bottom: 10%;
+  padding-right:3%;
 }
 
 .upload-btn{
@@ -105,22 +109,22 @@ body {background-color: #B9EBff;}
 }
 
 .audience_seats{
-    background-image: image-url("audience_seats.png");
-    background-size: contain;
-    background-repeat: repeat-y;
+  background-image: image-url("audience_seats.png");
+  background-size: contain;
+  background-repeat: repeat-y;
 }
 
 // chat
 .chat-room{margin-bottom:120px}
 .chat-form {
-    .form-control {width: 80%;}
-    .submit-btn {width: 20%;}
-    padding: 2%;
-    margin-bottom: 60px;
-    @extend .bg-secondary;
+  .form-control {width: 80%;}
+  .submit-btn {width: 20%;}
+  padding: 2%;
+  margin-bottom: 60px;
+  @extend .bg-secondary;
 }
 .message {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 .message-img-left {
   margin: 0;

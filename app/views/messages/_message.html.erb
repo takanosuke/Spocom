@@ -1,12 +1,12 @@
 <% mine = (message.user_id == current_user.id) %>
 <div class="message">
   <figure class="message-img-<%= mine ? "right" : "left" %>">
-    <img src="画像のURL" alt="">
-  <figcaption class="message-img-description">
-    <%= "#{display_name(message.user_id)}" %>
-  </figcaption>
+    <%= get_user_info_by_id(message.user_id)[:icon] %>
+    <figcaption class="message-img-description">
+      <%= get_user_info_by_id(message.user_id)[:fullname] %>
+    </figcaption>
   </figure>
   <div class="message-text-<%= mine ? "left" : "right" %>">
-   <p class="message-text"><%= "#{message.content}" %></p>
+    <p class="message-text"><%= "#{message.content}" %></p>
   </div>
 </div>

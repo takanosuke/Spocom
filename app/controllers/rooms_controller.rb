@@ -5,19 +5,19 @@ class RoomsController < ApplicationController
     if current_user.coach?
       @team_users = User.where("team_id = ?", current_user.team_id)
                         .where.not(id: current_user.id).all()
+      @list_name = "選手一覧"
     else
       @team_users = User.where("team_id = ?", current_user.team_id)
                         .where("position = ?", 2).all()
+      @list_name = "監督一覧"
     end
   end
 
   def find
     if current_user.teammate?(params[:id])
-      user_room = UserRoom.where("user_id = ?", current_user.id).pluck(:room_id)
-      to_user_room = UserRoom.where("user_id = ?", params[:id]).pluck(:room_id)
-      room_id = (user_room & to_user_room).min
+      room_id = UserRoom.find_room_id(current_user.id, params[:id])
       if room_id.blank?
-        create(params[:id])
+        create_room(params[:id])
       else
         redirect_to room_path(room_id)
       end
@@ -34,12 +34,12 @@ class RoomsController < ApplicationController
     if to_user.nil?
       @to_user_name = "UNKNOWN"
     else
-      @to_user_name = to_user.display_name 
+      @to_user_name = to_user.fullname
     end
   end
 
   private
-  def create(to_user_id)
+  def create_room(to_user_id)
     new_room = Room.create()
     user_room = UserRoom.create(room_id: new_room.id, user_id: current_user.id)
     to_user_room = UserRoom.create(room_id: new_room.id, user_id: to_user_id)
