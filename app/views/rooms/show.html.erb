@@ -1,11 +1,16 @@
 <h5 class="heading"><%= @to_user_name %></h5>
 
-<div class="container chat-room">
+<div class="container-fluid chat-room">
   <div id="messages", data-room_id="<%= @room.id %>">
     <%= render @messages %>
   </div>
-</div>
   <div class="form-inline chat-form fixed-bottom">
     <input type="text" data-behavior="room_speaker" class="form-control">
     <button type="submit" class="submit-btn btn btn-primary">送信</button>
   </div>
+</div>
+<script>
+  setTimeout(function() {
+    window.scroll(0,$(document).height());
+  },0);
+</script>

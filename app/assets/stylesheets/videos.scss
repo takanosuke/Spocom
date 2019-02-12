@@ -5,5 +5,27 @@
   display: inline-block;
   width: auto;
 }
-.hidden {display: none!important;}
 
+.electric_bulletin_board{
+  background-image: image-url("electric_bulletin_board.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.video{
+  margin-top:7%;
+  margin-bottom: 10%;
+  padding-right:3%;
+}
+
+.upload-btn{
+  width: 50%;
+  height: 100%;
+  background: #AAAAAA;
+}
+
+.audience_seats{
+  background-image: image-url("audience_seats.png");
+  background-size: contain;
+  background-repeat: repeat-y;
+}

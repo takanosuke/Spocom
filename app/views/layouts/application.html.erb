@@ -33,9 +33,11 @@
         </div>
       </div> <!--main-menu end-->
     </header>
-
-    <footer>
-      <nav class="navbar fixed-bottom navbar-dark bg-dark p-2">
+    <div id="wrapper">
+      <%= yield %>
+    </div>
+    <footer class="fixed-bottom">
+      <nav class="navbar navbar-dark bg-dark p-2">
         <ul class="nav nav-justified">
           <li class="text-center">
             <%= link_to root_path do %><i class="fa fa-home fa-3x"  style="color:white"></i><% end %>
@@ -52,8 +54,5 @@
         </ul>
       </nav>
     </footer><!--footer end-->
-    <div class="wrapper mb-5">
-      <%= yield %>
-    </div>
   </body>
 </html>
