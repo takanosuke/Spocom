@@ -6,7 +6,6 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:line]
 
   has_one_attached :image
-  has_many :social_profiles, dependent: :destroy
   has_many :messages
   has_many :user_rooms
 
