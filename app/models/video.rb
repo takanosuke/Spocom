@@ -39,6 +39,6 @@ class Video < ApplicationRecord
   end
 
   def video?
-    %w[video/mp4 video/gif video/mov video/m4v].include?(video.blob.content_type)
+    %w[video/mp4 video/gif video/mov video/m4v video/quicktime].include?(video.blob.content_type)
   end
 end
