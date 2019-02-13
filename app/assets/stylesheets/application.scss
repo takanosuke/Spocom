@@ -1,8 +1,8 @@
 @import "bootstrap";
 @import "bootstrap.min";
 @import "font-awesome";
-@import './common/utility';
-@import './*';
+@import './common/*';
+@import './views/*';
 
 // common
 body {background-color: #B9EBff;}

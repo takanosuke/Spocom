@@ -1,7 +1,7 @@
 <h5 class="heading"><%= @to_user_name %></h5>
 
 <div class="container-fluid chat-room">
-  <div id="messages", data-room_id="<%= @room.id %>">
+  <div id="messages" data-room_id="<%= @room.id %>">
     <%= render @messages %>
   </div>
   <div class="form-inline chat-form fixed-bottom">
@@ -12,5 +12,5 @@
 <script>
   setTimeout(function() {
     window.scroll(0,$(document).height());
-  },0);
+  }, 0);
 </script>
