@@ -19,16 +19,24 @@
         </div>
       </div> <!--navbar end-->
       <div class="fixed-top main-menu">
-        <div class="flex-center p-5">
+        <div class="media">
+          <%= image_tag(current_user.image, width:70, class:"mr-3 rounded-circle") %>
+          <div class="media-body">
+            <h5 class="mt-0 text-light"><%= current_user.fullname + "さん" %></h5>
+            <%= link_to "　マイページへ　", edit_line_user_path(current_user), class:"btn btn-info" %>
+          </div>
+        </div>
+        <div class="flex p-5">
           <ul class="nav flex-column">
-            <li class="nav-item delay-1"><a class="nav-link" href="#">HOME</a></li>
-            <li class="nav-item delay-2"><a class="nav-link" href="#">ABOUT US</a></li>
-            <li class="nav-item delay-3"><a class="nav-link" href="#">PRODUCTS</a></li>
-            <li class="nav-item delay-4"><a class="nav-link" href="#">APPLICATIONS</a></li>
-            <li class="nav-item delay-5"><a class="nav-link" href="#">FACILITIES</a></li>
-            <li class="nav-item delay-6"><a class="nav-link" href="#">QUALITY</a></li>
-            <li class="nav-item delay-7"><a class="nav-link" href="#">CAREER</a></li>
-            <li class="nav-item delay-8"><a class="nav-link" href="#">CONTACT US</a></li>
+            <li class="nav-item delay-1">
+              <i class="fa fa-caret-right fa-2x text-primary align-middle"></i><%= link_to "お問い合わせ", root_path %>
+            </li>
+            <li class="nav-item delay-2">
+              <i class="fa fa-caret-right fa-2x text-primary align-middle"></i><%= link_to "運営会社", root_path %>
+            </li>
+            <li class="nav-item delay-3">
+              <i class="fa fa-caret-right fa-2x text-primary align-middle"></i><%= link_to "利用規約", root_path %>
+            </li>
           </ul>
         </div>
       </div> <!--main-menu end-->

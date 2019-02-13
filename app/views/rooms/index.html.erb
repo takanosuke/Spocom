@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="media">
-    <%= image_tag(current_user.image, width:80, class:"mr-3") %>
+    <%= image_tag(current_user.image, width:80, class:"mr-3 rounded-circle") %>
     <div class="media-body">
       <h5 class="mt-1"><%= current_user.fullname %></h5>
     </div>
@@ -12,7 +12,7 @@
     <div class="">
       <%= link_to find_room_path(team_user), class:"" do %>
         <div class="media">
-          <%= image_tag(team_user.image, width:70, class:"mr-3") %>
+          <%= image_tag(team_user.image, width:70, class:"mr-3 rounded-circle") %>
           <div class="media-body">
             <h5 class="mt-1"><%= team_user.fullname %></h5>
             <p class="mb-0 text-truncate" style="max-width:250px;"><%= last_message(team_user.id) %></p>

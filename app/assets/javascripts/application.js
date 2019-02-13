@@ -20,7 +20,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap.min
 
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() { 
     $('.nav-button').click(function(){
       $('body').toggleClass('nav-open');
     });
