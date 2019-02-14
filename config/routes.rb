@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'videos#top_page'
   resources :rooms
@@ -17,5 +16,6 @@ Rails.application.routes.draw do
   get '/subscription_agreement/confirmention', to: 'subscription_agreement#confirmention', as: :renewal_confirmention
   get '/subscription_agreement/renewal', to: 'subscription_agreement#renewal', as: :renewal
   get '/subscription_agreement/expired_notification', to: 'subscription_agreement#expired_notification', as: :expired_notification
-
+  mount ActionCable.server => '/cable'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end

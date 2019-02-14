@@ -11,10 +11,10 @@
   <body>
     <% if user_signed_in? %>
       <%= render '/layouts/header' %>
-      <%= yield %>
+      <div id="wrapper"><%= yield %></div>
       <%= render '/layouts/footer' %>
     <% else %>
-      <%= yield %>
+      <div id="wrapper"><%= yield %></div>
     <% end %>
   </body>
 </html>
