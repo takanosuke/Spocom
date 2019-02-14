@@ -9,58 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <header class="head-main">
-      <div class="navbar navbar-dark bg-dark box-shadow p-1">
-        <div class="container d-flex justify-content-between p-0">
-          <div class="nav-button ml-0"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></div>
-          <div class="navbar-brand d-flex p-0 mx-auto">
-            <%= link_to image_tag("naver.png", :height=> 40, :alt => "アイコン"), root_path %>
-          </div>
-        </div>
-      </div> <!--navbar end-->
-      <div class="fixed-top main-menu">
-        <div class="media">
-          <%= image_tag(current_user.image, width:70, class:"mr-3 rounded-circle") %>
-          <div class="media-body">
-            <h5 class="mt-0 text-light"><%= current_user.fullname + "さん" %></h5>
-            <%= link_to "　マイページへ　", edit_line_user_path(current_user), class:"btn btn-info" %>
-          </div>
-        </div>
-        <div class="flex p-5">
-          <ul class="nav flex-column">
-            <li class="nav-item delay-1">
-              <i class="fa fa-caret-right fa-2x text-primary align-middle"></i><%= link_to "お問い合わせ", root_path %>
-            </li>
-            <li class="nav-item delay-2">
-              <i class="fa fa-caret-right fa-2x text-primary align-middle"></i><%= link_to "運営会社", root_path %>
-            </li>
-            <li class="nav-item delay-3">
-              <i class="fa fa-caret-right fa-2x text-primary align-middle"></i><%= link_to "利用規約", root_path %>
-            </li>
-          </ul>
-        </div>
-      </div> <!--main-menu end-->
-    </header>
-    <div id="wrapper">
+    <% if user_signed_in? %>
+      <%= render '/layouts/header' %>
       <%= yield %>
-    </div>
-    <footer class="fixed-bottom">
-      <nav class="navbar navbar-dark bg-dark p-2">
-        <ul class="nav nav-justified">
-          <li class="text-center">
-            <%= link_to root_path do %><i class="fa fa-home fa-3x"  style="color:white"></i><% end %>
-          </li>
-          <li class="text-center">
-            <%= link_to videos_path do %><i class="fa fa-user fa-3x" style="color:white"></i><% end %>
-          </li>
-          <li class="text-center">
-            <%= link_to rooms_path do %><i class="fa fa-comments fa-3x" style="color:white"></i><% end %>
-          </li>
-          <li class="text-center">
-            <%= link_to new_video_path do %><i class="fa fa-play-circle fa-3x" style="color:white"></i><% end %>
-          </li>
-        </ul>
-      </nav>
-    </footer><!--footer end-->
+      <%= render '/layouts/footer' %>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

@@ -1,0 +1,32 @@
+<header class="head-main">
+  <div class="navbar navbar-dark bg-dark box-shadow p-1">
+    <div class="container d-flex justify-content-between p-0">
+      <div class="nav-button ml-0"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></div>
+      <div class="navbar-brand d-flex p-0 mx-auto">
+        <%= link_to image_tag("naver.png", :height=> 40, :alt => "アイコン"), root_path %>
+      </div>
+    </div>
+  </div> <!--navbar end-->
+  <div class="fixed-top main-menu">
+    <div class="media">
+      <%= image_tag(current_user.image, width:70, class:"mr-3 rounded-circle") %>
+      <div class="media-body">
+        <h5 class="mt-0 text-light"><%= current_user.fullname + "さん" %></h5>
+        <%= link_to "　マイページへ　", edit_line_user_path(current_user), class:"btn btn-info" %>
+      </div>
+    </div>
+    <div class="flex p-5">
+      <ul class="nav flex-column">
+        <li class="nav-item delay-1">
+          <i class="fa fa-caret-right fa-2x text-primary align-middle"></i><%= link_to "お問い合わせ", root_path %>
+        </li>
+        <li class="nav-item delay-2">
+          <i class="fa fa-caret-right fa-2x text-primary align-middle"></i><%= link_to "運営会社", root_path %>
+        </li>
+        <li class="nav-item delay-3">
+          <i class="fa fa-caret-right fa-2x text-primary align-middle"></i><%= link_to "利用規約", root_path %>
+        </li>
+      </ul>
+    </div>
+  </div> <!--main-menu end-->
+</header>

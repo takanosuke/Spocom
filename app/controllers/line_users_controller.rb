@@ -3,7 +3,6 @@ class LineUsersController < ApplicationController
   def new
     @new_user = User.new()
     @omniauth = line_params
-    render :layout => 'before_login'
   end
   
   def create
