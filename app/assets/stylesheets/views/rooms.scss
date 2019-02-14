@@ -3,17 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .chat-room{margin-bottom:150px;}
-
 .chat-form {
   .form-control {
     width: 80%;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    max-height: 200px;
+    height: 38px;
+    line-height: 24px;
   }
   .submit-btn {
-    width: 20%;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    width: 19%;
+    margin-left: 1%;
   }
   padding: 2%;
   margin-bottom: 64px;

@@ -14,11 +14,9 @@ document.addEventListener('turbolinks:load', function() {
       });
     }
   });
-  return $(document).on('keypress', '[data-behavior~=room_speaker]', function(event) {
-    if (event.keyCode === 13) {
-      App.room.speak(event.target.value);
-      event.target.value = '';
-      return event.preventDefault();
-    }
+  return $(document).on('click', '.submit-btn', function() {
+    var textarea = $('[data-behavior~=room_speaker]'); 
+    App.room.speak(textarea.val());
+    textarea.val('');
   });
 });

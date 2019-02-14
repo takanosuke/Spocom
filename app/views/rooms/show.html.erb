@@ -5,7 +5,7 @@
     <%= render @messages %>
   </div>
   <div class="form-inline chat-form fixed-bottom">
-    <input type="text" data-behavior="room_speaker" class="form-control">
+    <textarea class="form-control" data-behavior="room_speaker"></textarea>
     <button type="submit" class="submit-btn btn btn-primary">送信</button>
   </div>
 </div>
@@ -13,4 +13,13 @@
   setTimeout(function() {
     window.scroll(0,$(document).height());
   }, 0);
+
+  $(function() {
+    var $textarea = $('[data-behavior~=room_speaker]');
+    var lineHeight = parseInt($textarea.css('lineHeight'));
+    $textarea.on('input', function(e) {
+      var lines = ($(this).val() + '\n').match(/\n/g).length;
+      $(this).height(lineHeight * lines);
+    });
+  });
 </script>
