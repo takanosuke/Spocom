@@ -1,0 +1,8 @@
+line:
+  key: 1614922793
+  secret: 36fcf545fbe4a22fc3ac49043ba1ce80
+database:
+  username: root # mysql username
+  password:  # mysql password
+  host: localhost
+

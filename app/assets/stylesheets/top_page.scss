@@ -1,0 +1,49 @@
+@import 'common/color';
+body{
+    background-color: $back-blue;
+}
+.todays_game{
+    .gray_line{
+        height: 1px;
+        border: none;
+        border-top: 5px $gray solid;
+    }
+    .light_gray_line {
+        height: 1px;
+        border: none;
+        border-top: 3px $light-gray solid;
+    }
+
+    .todays_game_title{
+        background-color: $gray;
+    }
+
+    h1{
+        font-family: 'smartfontUI', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        color: $orange;
+        margin-bottom: 0px;
+    }
+
+    .todays_video{
+        background-color: $light-gray;
+    }
+
+    .video_title{
+        font-family: 'smartfontUI', sans-serif;
+        background-color: $gray;
+        color: #01b3cf;
+    }
+}
+.good_play{
+    h2 {
+        font-family: 'HiraginoMaruGo', sans-serif;
+        color: $orange;
+        border-style: solid; border-color:$orange;
+        border-width: 2px;
+        display: inline-block;
+            font-size: 3rem;
+    }
+}
+

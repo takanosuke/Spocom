@@ -48,11 +48,17 @@ ActiveRecord::Schema.define(version: 2019_01_26_074310) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< Updated upstream
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "sport"
     t.string "name"
+=======
+  create_table "teams", force: :cascade do |t|
+>>>>>>> Stashed changes
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sport"
+    t.string "name"
   end
 
   create_table "user_rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,7 +82,7 @@ ActiveRecord::Schema.define(version: 2019_01_26_074310) do
     t.string "uid"
     t.datetime "subscription_expiration"
     t.integer "team_id"
-    t.integer "position"
+    t.string "position"
     t.string "first_name"
     t.string "last_name"
     t.string "kana_first_name"
@@ -86,15 +92,19 @@ ActiveRecord::Schema.define(version: 2019_01_26_074310) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< Updated upstream
   create_table "videos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
-    t.string "sport"
-    t.integer "team1_id"
-    t.integer "team2_id"
-    t.integer "contributor_id"
-    t.datetime "date"
+=======
+  create_table "videos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+>>>>>>> Stashed changes
+    t.string "title"
+    t.string "sport"
+    t.integer "contributor_id"
+    t.integer "price"
+    t.integer "team1_id"
+    t.integer "team2_id"
   end
 
   add_foreign_key "messages", "rooms"

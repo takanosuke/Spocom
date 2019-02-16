@@ -1,18 +1,44 @@
-<ul>
-<% if user_signed_in? %>
-  <li><%= link_to "ユーザー編集", edit_line_user_path(current_user.id) %></li>
-  <li><%= link_to "ログアウト", destroy_user_session_path %></li>
-  <li><%= link_to "動画一覧",videos_path %></li>
-  <li><%= link_to "動画アップロード", new_video_path %></li>
-  <li><%= link_to "チャット一覧", rooms_path %></li>
-  <br>
-  <% if current_user.image.attached? %>
-    <%= current_user.fullname %>
-    <%= image_tag(current_user.image, width:100) %>
-  <% end %>
-<% else %>
-  <li><%= link_to "メールアドレス会員登録", new_user_registration_path %>
-  <li><%= link_to "メールアドレスログイン", new_user_session_path %>
-  <li><%= link_to "LINE会員登録/ログイン", user_line_omniauth_authorize_path %></li>
-<% end %>
-</ul>
+ <%= stylesheet_link_tag "top_page", :media => "all" %>
+<div class="todays_game">
+
+  <div class="todays_game_title mt-3">
+    <div class="gray_line"></div>
+    <div class="light_gray_line"></div>
+    <h1 class="text-center py-2"><p><span class="fa fa-check"></span>&nbsp;TODAY'S GAME</p></h1>
+  </div>
+
+  <div class="todays_video pt-3">
+    <div class="mx-auto" style="width: 300px;">
+      <% @videos.each do |video| %>
+        <% if video.video.attachment.previewable? %>
+            <%= link_to image_tag(video.video.attachment.preview(resize: "300x300>")), video_path(video) %>
+            <br>
+          <div class="video_title text-center mt-4 mb-1 w-75 mx-auto">
+            <%= video.title %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="gray_line"></div>
+    <div class="gray_line"></div>
+
+  </div>
+</div>
+
+<div class="good_play text-center mt-4">
+  <h2 class="px-5"><p class="m-0"><span class="fa fa-trophy"></span> GOOD PLAY</p></h2>
+  <div class="image clearfix my-2">
+    <%= image_tag("video.png") %>
+  </div>
+  <div class="image clearfix my-2">
+    <%= image_tag("video.png") %>
+  </div>  
+  <div class="image clearfix my-2">
+    <%= image_tag("video.png") %>
+  </div>
+</div>
+
+
+
+</body>
