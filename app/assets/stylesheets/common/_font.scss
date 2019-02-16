@@ -2,3 +2,55 @@
 $meiryo:  'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
 
 $mincho: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+
+@font-face {
+    font-family: 'smartfontUI';
+    src: font-url('smartfontUI.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'HiraginoMaruGo';
+    src: font-url('HiraginoMaruGo.ttc') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// // レスポンシブfont-size
+// html{
+//     font-size: 62.5%;
+// }
+// body{
+//     font-size:1.6rem;/* 16px*/
+//     line-height: 2;
+// }
+// h1 {
+//     font-size: 36px;/* IE8以下とAndroid4.3以下用フォールバック */
+//     font-size: calc(2.4rem + ((1vw - 0.64rem) * 2.1429));/* 24px~36pxで可変*/
+//     line-height: 1.3;
+// }
+// h2 {
+//     font-size: 24px;/* IE8以下とAndroid4.3以下用フォールバック */
+//     font-size: calc(2rem + ((1vw - 0.64rem) * 0.7143));/* 20px~24pxで可変*/
+//     line-height: 1.3;
+// }
+// @media (min-width: 1200px) {/* 1200px以上*/
+//     h1 {
+//         font-size: 3.6rem;/* 36px*/
+//     }
+//     h2 {
+//         font-size: 2.4rem;/* 24px*/
+//     }
+// }
+// @media screen and (max-width: 640px) {/* 640px以下*/
+//     body{
+//     line-height: 2;
+//     }
+//     h1{
+//         font-size: 2.4rem;/* 24px*/
+//     }
+//     h2 {
+//         font-size: 2rem;/* 20px*/
+//     }
+// }
