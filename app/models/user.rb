@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_one_attached :image
   has_many :messages
+  has_many :comments
   has_many :user_rooms
 
   validates_acceptance_of :agreement, allow_nil: false, on: :create

@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'videos#top_page'
   resources :rooms
-  resources :videos
+  resources :videos do
+    resources :comments
+  end
   resources :line_users, :except => [:index, :destroy]
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks',
                                     registrations: 'users/registrations',

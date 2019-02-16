@@ -5,7 +5,30 @@
       <%= video_tag(rails_blob_path(@video.video), controls:true, disposition:'inline', class:'img-fluid video') %>
     </div>
   </div>
-  <div class="audience_seats">
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <div class="audience_seats pt-3">
+    <div class="comment">
+      <div class="list-group small">
+        <li class="list-group-item header">動画コメント</li>
+        <%= form_with(model:[@video, @comment], local: true) do |form| %>
+          <li class="list-group-item list-group-item-action add-comment">コメントを追加する...</li>
+          <li class="list-group-item hidden comment-form">
+            <div class="row ml-0 mr-0 form-group">
+              <%= form.text_field :body, class:"form-control col-9" %>
+              <%= form.text_field :time, class:"form-control col-3" %>
+            </div>
+            <%= form.submit "コメントの投稿", class:"btn-primary btn-block"%>
+          </li>
+        <% end %>
+
+        <% @comments.each do |cmt| %>
+          <li class="list-group-item">
+            <div class="row m-0">
+              <div class="col-9"><%= cmt.body %></div><div class="col-3 text-center">[<%= cmt.time %>]</div>
+            </div>
+          </li>
+        <% end %>
+      </div>
+    </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   </div>
 </div>

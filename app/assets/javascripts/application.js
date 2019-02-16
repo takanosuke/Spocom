@@ -21,8 +21,13 @@
 //= require bootstrap.min
 
 $(document).on('turbolinks:load', function() { 
-    $('.nav-button').click(function(){
-      $('body').toggleClass('nav-open');
-    });
+  $('.nav-button').click(function(){
+    $('body').toggleClass('nav-open');
+  });
 });
 
+$(document).on('turbolinks:load', function() {
+  $('.add-comment').click(function(){
+    $('.comment-form').toggleClass('hidden');
+  });
+});

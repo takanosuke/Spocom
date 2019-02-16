@@ -19,7 +19,7 @@ gem 'rails-i18n'
 # env config
 gem 'config'
 # For upload to s3
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', require: false
 # cron setting
 gem 'whenever', require: false
 # admin

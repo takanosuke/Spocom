@@ -1,5 +1,6 @@
 class Video < ApplicationRecord
   has_one_attached :video
+  has_many :comments, dependent: :destroy
 
   validates :team1_id, presence: true
   validates :team2_id, presence: true
