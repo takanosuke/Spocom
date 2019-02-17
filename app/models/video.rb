@@ -23,7 +23,7 @@ class Video < ApplicationRecord
     else
       team1_name = Team.find_by(id:team1_id).name
       team2_name = Team.find_by(id:team2_id).name
-      "#{team1_name} VS #{team2_name}"
+      "#{team1_name}<br>VS<br>#{team2_name}"
     end
   end
   
