@@ -51,27 +51,29 @@ body{
 // レスポンシブfont-size
 html{
     font-size: 62.5%;
+    font-family: 'HiraginoMaruGo';
 }
 body{
     font-size:1.6rem;/* 16px*/
+    font-family: 'HiraginoMaruGo';
     line-height: 2;
 }
 h1 {
-    font-size: 36px;/* IE8以下とAndroid4.3以下用フォールバック */
+    font-size: 26px;/* IE8以下とAndroid4.3以下用フォールバック */
     font-size: calc(2.4rem + ((1vw - 0.64rem) * 2.1429));/* 24px~36pxで可変*/
     line-height: 1.3;
 }
 h2 {
-    font-size: 24px;/* IE8以下とAndroid4.3以下用フォールバック */
+    font-size: 34px;/* IE8以下とAndroid4.3以下用フォールバック */
     font-size: calc(2rem + ((1vw - 0.64rem) * 0.7143));/* 20px~24pxで可変*/
-    line-height: 1.3;
+    line-height: 200%;
 }
 @media (min-width: 1200px) {/* 1200px以上*/
     h1 {
-        font-size: 3.6rem;/* 36px*/
+        font-size: 2.6rem;/* 36px*/
     }
     h2 {
-        font-size: 2.4rem;/* 24px*/
+        font-size: 3.4rem;/* 24px*/
     }
 }
 @media screen and (max-width: 640px) {/* 640px以下*/
@@ -79,9 +81,39 @@ h2 {
     line-height: 2;
     }
     h1{
-        font-size: 2.4rem;/* 24px*/
+        font-size: 1.4rem;/* 24px*/
     }
     h2 {
-        font-size: 2rem;/* 20px*/
+        font-size: 3rem;/* 20px*/
+    }
+}
+
+.spocom_top{
+    h1{
+        color:$light-gray;
+        font-family: 'HiraginoMaruGo';
+    }
+    h2{
+        background-color: #01b3cf;
+        font-family: 'HiraginoMaruGo';
+        line-height: 150%;
+    }
+    .spocom_feature{
+        background-color: $light-gray;
+        font-family: 'HiraginoMaruGo';
+        color: white;
+        p{
+            font-size:1.2rem;
+        }
+        h3{
+            font-family: 'HiraginoMaruGo';
+        }
+    }
+}
+.cta{
+
+    p{
+        color:$blue;
+        font-size: 2.4rem;
     }
 }
