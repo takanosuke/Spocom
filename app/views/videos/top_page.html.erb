@@ -9,15 +9,17 @@
 
   <div class="todays_video pt-3">
     <div class="mx-auto" style="width: 300px;">
-      <% @videos.last(1).each do |video| %>
-        <% if video.video.attachment.previewable? %>
-            <%= link_to image_tag(video.video.attachment.preview(resize: "300x300>")), video_path(video) %>
-            <br>
-          <div class="video_title text-center mt-4 mb-1 w-75 mx-auto">
-            <%= video.title %>
-          </div>
+      <% if @videos.present? %>
+        <% @videos.last(1).each do |video| %>
+          <% if video.video.attachment.previewable? %>
+              <%= link_to image_tag(video.video.attachment.preview(resize: "300x300>")), video_path(video) %>
+              <br>
+            <div class="video_title text-center mt-4 mb-1 w-75 mx-auto">
+              <%= video.title %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      <% end%>
     </div>
 
     <div class="gray_line"></div>
