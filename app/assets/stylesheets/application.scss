@@ -5,9 +5,11 @@
 @import './views/*';
 
 // common
-body {background-color: #B9EBff;}
 
-#wrapper {margin-bottom: 65px;}
+#wrapper {
+  margin-bottom: 65px;
+  background-color: #B9EBff;
+}
 
 .hidden {display: none!important;}
 

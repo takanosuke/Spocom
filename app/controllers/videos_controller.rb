@@ -2,11 +2,11 @@ class VideosController < ApplicationController
   before_action :authenticate_user!, except: [:top_page]
 
   def top_page
+    return render '/videos/beforelogin' unless user_signed_in?
     @video = Video.all.order(:created_at).first
     team_id = current_user.team_id
     @my_team = Team.find(team_id).name
     @videos = Video.where('team1_id=? or team2_id=?', team_id, team_id).all.order(:created_at)
-
   end
   def index
     team_id = current_user.team_id
