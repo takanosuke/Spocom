@@ -1,4 +1,4 @@
-<h5 class="heading my-1">MY GAMES</h5>
+<h5 class="heading">MY GAMES</h5>
 <br>
 <div class="container">
   <h6 class="text-center bg-info"><%= "#{@my_team}の動画" %></h6>
@@ -6,6 +6,6 @@
       <%= link_to video_path(video) do %>
         <%= render partial:'/videos/thumbnail', locals:{title:video.title, date:video.date} %>
       <% end %>
-      <br><hr>
+      <br>
   <% end %>
 </div>

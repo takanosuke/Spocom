@@ -5,10 +5,11 @@
 @import './views/*';
 
 // common
-
 #wrapper {
-  margin-bottom: 65px;
-  background-color: #B9EBff;
+  overflow:hidden;
+  min-height: 100vh;
+  margin-bottom: 61px;
+  background-color: $back-blue;
 }
 
 .hidden {display: none!important;}
@@ -28,11 +29,10 @@ a {
 }
 
 .heading{
-  margin-top: 2%;
-  margin-bottom: 2%;
   border-width: thick !important;
   color: #F7931E;
   @extend .sticky-top;
+  @extend .my-2;
   @extend .text-center;
   @extend .bg-secondary;
   @extend .border-top;
