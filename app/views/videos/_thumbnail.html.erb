@@ -1,9 +1,8 @@
 <div class="img-thumbnail thumbnail">
   <%= image_tag("video_thumbnail.png", class:"rounded img-fluid") %><br>
-  <div class="info text-center mx-auto">
-    <h5><%= title.html_safe %><br><br>
-    <%= date.strftime("%Y年%m月%d日") %><br>
-    <%= location %>
-    </h5>
+  <div class="info text-center mx-auto" style="width: 100%;">
+    <h5><%= title.html_safe %></h5>
+    <small><%= date.strftime("%Y年%m月%d日") %></small><br>
+    <small><%= location %></small>
   </div>
 </div>
