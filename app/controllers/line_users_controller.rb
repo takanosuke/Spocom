@@ -39,7 +39,7 @@ class LineUsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:last_name, :kana_last_name, :first_name, :kana_first_name, 
-                                 :display_name, :team_id, :email, :image, :agreement)
+                                 :team_id, :email, :image, :agreement)
   end
   def line_params
     params.require(:line).permit(:provider, :uid, 
