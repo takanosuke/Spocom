@@ -1,22 +1,16 @@
 .img-thumbnail {
-    position: relative;
-}
+	position: relative;
 
-.img-thumbnail h5{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%,-50%);
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    margin:0;
-    padding:0;
-}
+	img {width: 100%;}
 
-.img-thumbnail img{
-    width: 100%;
-}
-
-.img-thumbnail p{
-    text-align: center;
+  .info {
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	-ms-transform: translate(-50%,-50%);
+  	-webkit-transform: translate(-50%,-50%);
+  	transform: translate(-50%,-50%);
+  	margin:0;
+  	padding:0;
+	}
 }

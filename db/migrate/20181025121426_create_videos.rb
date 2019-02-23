@@ -7,6 +7,7 @@ class CreateVideos < ActiveRecord::Migration[5.2]
       t.integer :team2_id
       t.integer :contributor_id
       t.datetime :date
+      t.string :location
       t.timestamps
     end
   end

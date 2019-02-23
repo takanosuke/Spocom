@@ -31,6 +31,6 @@ class VideosController < ApplicationController
   end
   private
     def video_params
-      params.require(:video).permit(:video, :team1_id, :team2_id, :date)
+      params.require(:video).permit(:video, :team1_id, :team2_id, :date, :location)
     end
 end

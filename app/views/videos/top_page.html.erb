@@ -11,7 +11,7 @@
       <% if @videos.present? %>
         <% @videos.last(1).each do |video| %>
           <%= link_to video_path(video) do %>
-            <%= render partial:'/videos/thumbnail', locals:{title:video.title, date:video.date} %>
+            <%= render partial:'/videos/thumbnail', locals:{title:video.title, date:video.date, location:video.location} %>
           <% end %>
           <div class="video_title text-center mt-4 mb-1 w-75 mx-auto">
             <%= video.title.html_safe %>

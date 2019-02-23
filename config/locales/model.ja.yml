@@ -30,4 +30,5 @@ ja:
         team2_id: '対戦チーム名2'
         contributor_id: '投稿者'
         date: '撮影日'
+        location: '試合場所'
         upload: 'アップロード'

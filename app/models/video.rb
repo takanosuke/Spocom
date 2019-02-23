@@ -4,6 +4,7 @@ class Video < ApplicationRecord
 
   validates :team1_id, presence: true
   validates :team2_id, presence: true
+  validates :location, presence: true
   validate :video_validation
 
   def register(params, user)
