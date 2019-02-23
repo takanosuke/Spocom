@@ -53,11 +53,16 @@
       <%= f.file_field :image, direct_upload: true, class:"form-control-file" %><br>
     </div>
 
-    <div class="form-group form-check">
-      <%= f.check_box :agreement, :as => :boolean, checked:false %>
-      <label class="form-check-label" for="user_agreement">
-        利用規約とプライバシーポリシーに同意する
-      </label>
+    <div class="form-group">
+      <div class="form-check">
+        <%= f.check_box :agreement, :as => :boolean, checked:false %>
+        <label class="form-check-label" for="user_agreement">
+          <p>利用規約とプライバシーポリシーに同意</p>
+        </label>
+      </div>
+      <div class="terms">
+        <%= render partial:'/supports/terms' %>
+      </div>
     </div>
 
     <div class="form-group text-center">

@@ -19,7 +19,7 @@ a {
   border: none !important;
 }
 
-.before-login-heading{
+.before-login-heading {
   @extend .container-fluid;
   margin-top:5%;
   margin-bottom:5%;
@@ -28,7 +28,7 @@ a {
   background-color: #00bfff;
 }
 
-.heading{
+.heading {
   border-width: thick !important;
   color: #F7931E;
   @extend .sticky-top;
@@ -38,6 +38,13 @@ a {
   @extend .border-top;
   @extend .border-bottom;
   @extend .border-dark;
+}
+
+.terms {
+  overflow: scroll;
+  border: solid thin;
+  width: 100%;
+  height: 200px;
 }
 // common end
 
