@@ -1,7 +1,7 @@
 <h5 class="heading">MY GAMES</h5>
 <br>
+<h5 class="team-heading"><%= "#{@my_team}の動画" %></h5>
 <div class="container">
-  <h6 class="text-center bg-info"><%= "#{@my_team}の動画" %></h6>
   <% @team_videos.each do |video| %>
       <%= link_to video_path(video) do %>
         <%= render partial:'/videos/thumbnail', locals:{title:video.title, date:video.date, location:video.location} %>
