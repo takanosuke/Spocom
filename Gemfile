@@ -23,7 +23,7 @@ gem 'aws-sdk-s3', require: false
 # cron setting
 gem 'whenever', require: false
 # admin
-gem 'rails_admin', '~> 1.3'
+gem 'rails_admin', '~> 1.4'
 gem 'cancancan', '~> 2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
